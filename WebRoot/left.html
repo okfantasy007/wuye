@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+ 
+
+</style></head>
+
+<body>
+<table width="173" height="100%" border="0" cellpadding="0" cellspacing="0" style="table-layout:fixed;">
+  <tr>
+    <td style="width:4px; background-image:url(images/main_16.gif)">&nbsp;</td>
+    <td width="169" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr></tr>
+      <tr>
+        <td height="20" background="images/main_11.gif" style="position: absolute ;left: 0px;top: 0px;width: 173px;">&nbsp;</td>
+      </tr><br/>
+     <link rel="StyleSheet" href="css/dtree.css" type="text/css" />
+	<script type="text/javascript" src="js/dtree.js"></script>
+	<script type="text/javascript">
+		/*
+			模块信息表     字段： 主键     模块名称  父模块id   url  img  url  title
+			
+		*/	
+		d = new dTree('d');
+		d.add(0,-1,'');
+		d.add(1,0,'1.1住户管理',"");
+			d.add(2,1,'住户列表',"ResidentServlet?opt=list","queryResident","rightFrame");
+			d.add(3,1,'学历分析',"ResidentServlet?opt=drawedu","queryResident","rightFrame");
+			d.add(4,1,'年龄分析',"ResidentServlet?opt=drawage","queryResident","rightFrame");
+			
+		d.add(8,0,'1.2设备管理',"");
+			d.add(9,8,'设备查询',"equipmentAction.action?remark=queryByPage","queryEquipment","rightFrame");
+			d.add(10,8,'设备添加',"equipment/addEquipment.jsp","addEquipment","rightFrame");
+		d.add(13,0,'1.3房产管理',"");
+			d.add(14,13,'建筑图纸管理',"realEstateInformationAction.action?remark=queryByPage","queryResidentList","rightFrame");
+		d.add(17,0,'1.4人事管理',"");
+			d.add(18,17,'员工信息查询',"EmployeeServlet.action?opt=list","员工信息","rightFrame");
+			d.add(19,17,'部门信息查询','dept/dept.jsp',"部门信息","rightFrame");
+			d.add(20,17,'员工工资管理',"clerkVoCheckAction.action?remark=showSal","工资信息","rightFrame");
+			d.add(21,17,'员工考勤记录',"clerkVoCheckAction.action?remark=query&className=com.chdsxt.lovehotel.vo.CheckWorkVo","员工考勤","rightFrame");
+		d.add(22,0,'1.5缴费管理',"");
+			d.add(23,22,'缴费项目',"paymentAction.action?remark=queryPayment","queryPayment","rightFrame");
+			d.add(24,22,'缴费数据查询',"payInfoAction.action?remark=queryPayInfoList","queryPayInfoList","rightFrame");
+			d.add(25,22,'缴费人数分析',"payInfoAction.action?remark=drawPic","drawPic","rightFrame");
+			d.add(26,22,'缴费费用分析',"payInfoAction.action?remark=drawTable","drawTable","rightFrame");		
+		
+		document.write(d);
+
+	</script>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

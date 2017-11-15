@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<!-- 
+	<filter>
+		<filter-class>com.cdsxt.filter.CharsetFilter</filter-class>
+		<filter-name>CharsetFilter</filter-name>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharsetFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	 -->
+	
+	<!-- 员工信息管理 -->
+	<servlet>
+	    <servlet-name>EmployeeServlet</servlet-name>
+		<servlet-class>com.cdsxt.emp.service.EmployeeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmployeeServlet</servlet-name>
+		<url-pattern>/EmployeeServlet.action</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+	    <servlet-name>ResidentServlet</servlet-name>
+		<servlet-class>com.cdsxt.resident.service.ResidentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ResidentServlet</servlet-name>
+		<url-pattern>/ResidentServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+	    <servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.cdsxt.login.LoginServlet</servlet-class>	
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>photoInitServlet</servlet-name>
+    <servlet-class>com.cdsxt.resident.init.PhotoInitServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+</web-app>
